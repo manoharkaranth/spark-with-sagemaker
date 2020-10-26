@@ -1,4 +1,4 @@
-# Spark_With_Sagemaker
+## Spark_With_Sagemaker
 ### Problem statement:
    Build a Spark cluster on AWS's Elastic Map Reduce (EMR). Establish connection from it to a Sagemaker notebook instance over Livy, a Spark REST server. Conduct machine learning on data which reside in HDFS.
 <br/> <br/>
@@ -30,16 +30,16 @@ Solution is broadly divided into two parts.
      - <code> cd .sparkmagic</code>
      - <code> wget https://raw.githubusercontent.com/jupyter-incubator/sparkmagic/master/sparkmagic/example_config.json</code>
      - <code> mv example_config.json config.json </code>
-* Edit the config.json and replace every instance of `localhost` with the Private IP of your EMR Master.
+* Edit the config.json and replace every instance of _localhost_ with the Private IP of your EMR Master.
 * We should test our connection to EMR over Livy. This can be done by running the following command:
      - <code> curl <EMR Master Private IP>:8998/sessions</code>
 * Close the terminal and open a notebook with Sparkmagic (PySpark). Restart the kernel and do analytics.
 
 ### 2. Employing Machine learning on Spark cluster's data.
-This step is performed entirely in a notebook linked here &#8594; [![nbviewer](https://user-images.githubusercontent.com/2791223/29387450-e5654c72-8294-11e7-95e4-090419520edb.png)](https://nbviewer.jupyter.org/github/manoharkaranth/Clustering/blob/master/KMeans_Demo.ipynb)</br>
+This step is performed entirely on a notebook linked here &#8594; [![nbviewer](https://user-images.githubusercontent.com/2791223/29387450-e5654c72-8294-11e7-95e4-090419520edb.png)](https://nbviewer.jupyter.org/github/manoharkaranth/Clustering/blob/master/KMeans_Demo.ipynb)</br>
 <br/><br/>
 ### Final thoughts:
-Salient element here is to utilise a sufficiently heavy machine learning instance for your jupyter notebook instance otherwise one may see a  _connection failed_ error. Also, enable autoscaling for EMR especially working on a large data. Furthermore, Livy server timeout is defaulted to 1 hour, to increase it connect with the master node via SSH or Kerberos.
+Salient element here is to utilise a sufficiently heavy machine learning compute instance for your jupyter notebook. Otherwise, one may see a  _connection failed_ error. Also, enable autoscaling for EMR especially whilst working on a large data. Furthermore, Livy server's timeout is defaulted to 1 hour, to increase it, connect with the master node via SSH or Kerberos and configure it.
 <br/><br/>
 ##### Reference: AWS documentations.
 
