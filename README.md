@@ -1,4 +1,4 @@
-## Spark_With_Sagemaker
+## Spark with Sagemaker 
 ### Problem statement:
    Build a Spark cluster on AWS's Elastic Map Reduce (EMR). Establish connection from it to a Sagemaker notebook instance over Livy, a Spark REST server. Conduct machine learning on data which reside in HDFS.
 <br/> <br/>
@@ -36,7 +36,7 @@ Solution is broadly divided into two parts.
 * Close the terminal and open a notebook with Sparkmagic (PySpark). Restart the kernel and do analytics.
 
 ### 2. Employing Machine learning on Spark cluster's data.
-This step is performed entirely on a notebook linked here &#8594; [![nbviewer](https://user-images.githubusercontent.com/2791223/29387450-e5654c72-8294-11e7-95e4-090419520edb.png)](https://nbviewer.jupyter.org/github/manoharkaranth/Spark_With_Sagemaker/blob/master/sagemaker-spark.ipynb)</br>
+This step is performed entirely on a notebook linked here &#8594; [![nbviewer](https://user-images.githubusercontent.com/2791223/29387450-e5654c72-8294-11e7-95e4-090419520edb.png)](https://nbviewer.jupyter.org/github/manoharkaranth/spark-with-sagemaker/blob/master/sagemaker-spark.ipynb)</br>
 <br/><br/>
 ### Final thoughts:
 Salient element here is to utilise a sufficiently heavy machine learning compute instance for notebook. Otherwise, one may see a  _connection failed_ error. Also, enable autoscaling for EMR especially whilst working on a large data. Furthermore, Livy server's timeout is defaulted to 1 hour, to increase it, connect with the master node via SSH or Kerberos and configure it.
